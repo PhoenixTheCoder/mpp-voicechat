@@ -92,11 +92,11 @@ let audioIN = { audio: true };
                 // play audio when loaded
                 audio.addEventListener('loadeddata', () => {
                     audio.play();
-                    //$(p.nameDiv).addClass("play");
+                    $(p.nameDiv).addClass("play");
                 });
 
                 setTimeout(() => {
-                    //$(p.nameDiv).removeClass("play");
+                    $(p.nameDiv).removeClass("play");
                 }, 5000);
             }
         });
