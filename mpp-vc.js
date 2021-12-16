@@ -67,7 +67,6 @@ let audioIN = { audio: true };
         }, 3000);
 
         MPP.client.on("custom", cu => {
-            if (cu.p == MPP.client.getOwnParticipant()._id) return;
             let p = Object.values(MPP.client.ppl).find(p => p._id === cu.p);
             if (cu.data.m == "userJoinedVC") {
                 var vanishDiv = document.createElement("div");
@@ -85,7 +84,7 @@ let audioIN = { audio: true };
             let msg = cu.data;
 
             if (msg.m == "vc") {
-
+                if (cu.p == MPP.client.getOwnParticipant()._id) return;
                 // convert msg.vcData from string to blob
                 let audio = new Audio(msg.vcData);
 
